@@ -8192,11 +8192,9 @@ h1, h2, h3, h4, h5,
     opacity: .8;
     background: #0033c7; }
   .hero-wrap.hero-wrap-2 {
-    height:100vh;
-min-height:100vh; }
+    height: 300px; }
     .hero-wrap.hero-wrap-2 .slider-text {
-      height:100vh;
-min-height:100vh; }
+      height: 300px; }
       .hero-wrap.hero-wrap-2 .slider-text .bread {
         font-weight: 900;
         color: #fff; }
