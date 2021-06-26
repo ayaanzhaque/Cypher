@@ -116,17 +116,31 @@
         <div class="col-md-8 text-center">
           <h2 class="mb-4">AI-Based Audio Classification and Enhancement</h2>
           <p class="mb-5">We leverage state-of-the-art research to train and implement effective and accurate 
-            deep learning solutions for 911 operators.</p>
+            deep learning solutions for 911 operators. The warmstarted audio files are quered to the web server.
+            A single audio file is simultaenously fed to each of the 3 networks in an ensamble scheme, and a variety of outputs
+            are fed to the frontend. Below are details on the specific model architectures we implement from recent research.
+          </p>
 
             
             <h3 class="mb-4">Audio Classification</h3>
-            <h4>We utilize deep convolutional nueral networks to determine </h3>
+            <p class="mb-5">We use deep convolutional nueral networks for audio classification. 
+              Using state-of-the-art nueral architectures, we can fine-tune the models to accurately classify
+              live audio files for 911 operators. The following architecture is pretrained and fine-tuned on a 911
+              call dataset. The model has millions of parameters, making it challenging to deploy on a free server, but a 
+              pruned version is available on our backend python server.
+            </p>
             <figure>
               <img src="images/classification_archi.png" class="img-fluid" width="500%" height="500%">
               <figcaption>Kim et. al. 2019</figcaption>
             </figure>
 
             <h3 class="mb-4">Audio Enhancement and Reconstruction</h3>
+            <p class="mb-5">We use deep convolutional autoencoders for audio enhancement and amplification. 
+              This state-of-the-art architecture is modified to input information from the classification models regarding
+              what dangerous noises are so they can be amplified. Moreover, the architecture is pretrained for audio enhancement, a 
+              significant challenge for 911 operators. Lastly, we build upon the multi-tasking framework and add a generative branch for 
+              predictive fill in when audio frequency becomes 0. This deep architecture is impossible to deploy given our server.
+            </p>
             <figure>
               <img src="images/enhancement_archi.png" class="img-fluid" width="500%" height="500%">
               <figcaption>Park et. al. 2016</figcaption>
