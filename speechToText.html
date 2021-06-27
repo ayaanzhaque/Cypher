@@ -403,7 +403,7 @@
           <button class="btn btn-primary px-4 py-3 mt-3" onclick="myFunction()" id="play">Play Previous Audio</button>
 <br>
 <br>
-          <!-- <div class='row'>
+          <div class='row'>
             <div class='col-sm'>
               <p id='previous5seconds'>Previous 5 Seconds</p>
               <audio id="adioPlayOld" controls></audio>
@@ -412,30 +412,9 @@
               <p id='current5seconds'> Currently recording 5 seconds</p>
           <audio id="adioPlay" controls></audio>
             </div>
-          </div> -->
+          </div>
 
-          
-
-          <div class='row'>
-            <div class='col-sm'>
-              <p id='previous5seconds'>Previous 5 Seconds</p>
-              <audio id="adioPlayOld"></audio>
-
-              <audio id='hide' controls>
-                <source src="good-quality.m4a" type="audio/ogg">
-              Your browser does not support the audio element.
-              </audio>
-
-            </div>
-            <div class='col-sm'>
-              <p id='current5seconds'> Currently recording 5 seconds</p>
-
-          <audio id="adioPlay"></audio>
-
-          <audio id='hide2' controls>
-                <source src="good-quality.m4a" type="audio/ogg">
-              Your browser does not support the audio element.
-              </audio>
+      
             </div>
           </div>
 
@@ -454,8 +433,6 @@ document.getElementById("adioPlayOld").style.visibility = "hidden";
 document.getElementById("adioPlay").style.visibility = "hidden";
 document.getElementById("previous5seconds").style.visibility = "hidden";
 document.getElementById("current5seconds").style.visibility = "hidden";
-document.getElementById("hide").style.visibility = "hidden";
-document.getElementById("hide2").style.visibility = "hidden";
 
 
             function myFunction(){
@@ -463,8 +440,6 @@ document.getElementById("hide2").style.visibility = "hidden";
                 document.getElementById("adioPlayOld").style.visibility = "visible";
                 document.getElementById("previous5seconds").style.visibility = "visible";
                 document.getElementById("current5seconds").style.visibility = "visible";
-                document.getElementById("hide").style.visibility = "visible";
-                document.getElementById("hide2").style.visibility = "visible";
               }
 
           let audioIN = { audio: true };
@@ -495,7 +470,6 @@ document.getElementById("hide2").style.visibility = "hidden";
 
               /* It will play the audio
               audio.onloadedmetadata = function (ev) {
-
                 // Play the audio in the 2nd audio
                 // element what is being recorded
                 audio.play();
@@ -751,7 +725,7 @@ if (navigator.getUserMedia) {
         }
         var counter = 0;
 
-        if (average > 1) {
+        if (average > 300) {
 
             if (counter === 0) {
 
@@ -778,17 +752,12 @@ if (navigator.getUserMedia) {
 
 /*
         if (average > 50) {
-
                 if (counter === 0) {
-
                     counter++;
                 } else if (counter === 1) {
                     document.getElementById("gunshot").innerHTML = "Glass Breaking";
                     counter--;
                 }
-
-
-
         }
 */
         console.log(average);
