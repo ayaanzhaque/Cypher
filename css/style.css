@@ -4155,6 +4155,14 @@ input[type="button"].btn-block {
     color: #fff;
     background-color: #1e7e34; }
 
+    .disheader {
+      padding: 60px;
+      text-align: center;
+      background: #C10D18;
+      color: white;
+      font-size: 30px;
+    }
+
 .badge-info {
   color: #fff;
   background-color: #17a2b8; }
@@ -8194,9 +8202,16 @@ h1, h2, h3, h4, h5,
   .hero-wrap.hero-wrap-2 {
     height:100vh;
 min-height:100vh; }
+.hero-wrap.hero-wrap-3 {
+  height:30vh;
+min-height:30vh; }
     .hero-wrap.hero-wrap-2 .slider-text {
       height:100vh;
 min-height:100vh; }
+.hero-wrap.hero-wrap-3 .slider-text {
+     height:30vh;
+     min-height:30vh;
+}
       .hero-wrap.hero-wrap-2 .slider-text .bread {
         font-weight: 900;
         color: #fff; }
@@ -8209,6 +8224,7 @@ min-height:100vh; }
           border-bottom: 2px solid rgba(255, 255, 255, 0.1); }
           .hero-wrap.hero-wrap-2 .slider-text .breadcrumbs span a {
             color: #fff; }
+
 
 .owl-carousel {
   position: relative; }
