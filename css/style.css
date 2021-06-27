@@ -4155,14 +4155,6 @@ input[type="button"].btn-block {
     color: #fff;
     background-color: #1e7e34; }
 
-    .disheader {
-      padding: 60px;
-      text-align: center;
-      background: #C10D18;
-      color: white;
-      font-size: 30px;
-    }
-
 .badge-info {
   color: #fff;
   background-color: #17a2b8; }
@@ -9261,7 +9253,7 @@ textarea.form-control {
     right: 0;
     content: '';
     z-index: -1;
-    opacity: .8;
+    opacity: 1;
     background: #C10D1B; }
 
 .ftco-counter {
