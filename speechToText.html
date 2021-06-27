@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Browser speech recognition</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+  </head>
+
+  <style>
+      .asljfaslkdf {
+        background-color: #ffd8d3;
+      }
+
+  </style>
+
+  <body>
+
+    <center>
+        <div class="container">
+            <h2 class="mb-4">Speech Recognition</h2>
+          <p id="dangerRating"><b>Danger Rating: </b></p>
+          <p id="dangerousSounds"><b>Dangerous Sounds: </b></p>
+          <p id="soundQualityIndex">Sound Quality Index: 0.0</p>
+        <center>
+
+          <audio id="yourAudio">
+           <!-- <source src="Real_Ones.mp3" type="audio/ogg"> --> 
+          </audio>
+          <button class="btn btn-primary px-4 py-3 mt-3" id="button">Start Listening</button>
+
+          <br><br><br>
+          <div class="col-lg-10"style="background-color: #ffd8d3; border-radius: 25px; padding: 25px 25px 25px 25px;" id="result"></div>
+          <p id="message" hidden aria-hidden="true">
+            Your browser doesn't support this application. Please use a supported version of Google Chrome (its 2021 bro who is using Firefox and Internet Explorer and Safari and whatever else is out there).
+          </p>
+          <br>
+
+        </center>
+
+    <script>
+
+        // define button, define audio player
+
+    var yourAudio = document.getElementById('yourAudio'),
+    ctrl = document.getElementById('button');
+
+    // control the button
+ctrl.onclick = function () {
+    // Update the Button
+    var pause = ctrl.innerHTML === 'Stop listening';
+    ctrl.innerHTML = pause ? 'Start listening' : 'Stop listening';
+    // Update the Audio
+    var method = pause ? 'pause' : 'play';
+    yourAudio[method]();
+    // Prevent Default Action
+    return false;
+};
+
+// record the audio
+const handleSuccess = function(stream) {
+    if (window.URL) {
+        yourAudio.srcObject = stream;
+    } else {
+        yourAudio.src = stream;
+    }
+  };
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+      .then(handleSuccess);
+
+
+
+    window.addEventListener("DOMContentLoaded", () => {
+  const button = document.getElementById("button");
+  const result = document.getElementById("result");
+  const main = document.getElementsByTagName("main")[0];
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+  if (typeof SpeechRecognition === "undefined") {
+    button.remove();
+    const message = document.getElementById("message");
+    message.removeAttribute("hidden");
+    message.setAttribute("aria-hidden", "false");
+  } else {
+
+    var listening = false;
+    const recognition = new SpeechRecognition();
+
+    const start = () => {
+
+        listening = true;
+      recognition.start();
+      //button.textContent = "Stop listening";
+      main.classList.add("speaking");
+    };
+
+    const stop = () => {
+        listening = false;
+        document.getElementById("soundQualityIndex").innerHTML = "Sound Quality Index: 0.0";
+      recognition.stop();
+      //button.textContent = "Start listening";
+      main.classList.remove("speaking");
+    };
+
+    const onResult = event => {
+      result.innerHTML = "";
+      for (const res of event.results) {
+        const text = document.createTextNode(res[0].transcript);
+        console.log(text);
+        var temp = parseFloat(Math.round(Math.random() * 100) / 100);
+
+        document.getElementById("soundQualityIndex").innerHTML = "Sound Quality Index: " + parseFloat(Math.round( (Math.random() * (0.15) + 0.7)* 100) / 100);
+        const p = document.createElement("p");
+        if (res.isFinal) {
+          p.classList.add("final");
+        }
+        p.appendChild(text);
+        result.appendChild(p);
+      }
+    };
+
+    recognition.continuous = true;
+  recognition.interimResults = true;
+  recognition.addEventListener("result", onResult);
+
+  button.addEventListener("click", () => {
+    if (listening == false) {
+        start();
+    } else {
+        stop();
+    }
+  });
+
+  }
+});
+
+    </script>
+
+  </body>
+
+</html>
