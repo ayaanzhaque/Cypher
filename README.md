@@ -4,11 +4,11 @@
 
 Using AI audio processing to streamline 911 calls. 
 
-Devpost:
+Devpost: https://devpost.com/software/cypher-iku5ft
 
-Video Presentation:
+Video Presentation: https://youtu.be/t3Aw2YWWAFc
 
-Demo: 
+Demo: https://youtu.be/SjQM5Dkm7GE
 
 Slides: https://docs.google.com/presentation/d/1QBHu6mkHZ_MlvNCZxI8Q6fa1rfaJGtVajeOJRdOOkkg/edit?usp=sharing
 
