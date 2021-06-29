@@ -12,7 +12,7 @@ Using AI audio processing to streamline 911 calls.
 
 - **3rd Place Overall @ EpsilonHacks 2021**
 
-Video Presentation: https://youtu.be/t3Aw2YWWAFc
+Video Presentation: https://youtu.be/274InlxQiLU
 
 Demo: https://youtu.be/SjQM5Dkm7GE
 
