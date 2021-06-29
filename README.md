@@ -2,7 +2,15 @@
 
 # [Cypher](https://cypherai.tech/)
 
-Using AI audio processing to streamline 911 calls. 
+Using AI audio processing to streamline 911 calls.
+
+- **1st Place Overall @ NologyHacks 2021**
+
+- **1st Place Idea @ OwlHacks 2021**
+
+- **2nd Place Overall @ TeenHacksLI 2021**
+
+- **3rd Place Overall @ EpsilonHacks 2021**
 
 Video Presentation: https://youtu.be/t3Aw2YWWAFc
 
